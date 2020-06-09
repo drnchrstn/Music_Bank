@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.musicbank.Objects.Song;
 import com.example.musicbank.R;
+import com.example.musicbank.Utils.StringUtils;
+
+import java.text.DateFormat;
+import java.util.Date;
 
 public class SongListCursorAdapter extends BaseCursorAdapter<SongListCursorAdapter.ViewHolder>{
 
@@ -31,10 +37,10 @@ public class SongListCursorAdapter extends BaseCursorAdapter<SongListCursorAdapt
         if (songName.contains("by")){
             songName = songName.substring(0,songName.lastIndexOf("by"));
         }
-
+//        holder.tv_song_name.setAnimation(AnimationUtils.loadAnimation());
         holder.tv_song_name.setText(songName);
         holder.tv_artist.setText(song.getArtist());
-        holder.tv_date_added.setText(song.getDate_added());
+        holder.tv_date_added.setText(StringUtils.timestampToDate(song.getDate_added()));
 
 
     }

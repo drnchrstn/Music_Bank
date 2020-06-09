@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/grey_light"
+        android:padding="3dp">
+
+        <RelativeLayout
+            android:id="@+id/playercon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_youtube"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/youtube_search"
+                android:scaleType="centerCrop"/>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/play_icon"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:id="@+id/send">
+            <TextView
+                android:id="@+id/youtube_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Youtube title"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+            <TextView
+                android:id="@+id/youtube_uploader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Youtube uploader"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="end|bottom"
+                android:weightSum="2"
+                android:gravity="end|bottom">
+                <TextView
+                    android:id="@+id/youtube_views"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1M Views"
+                    android:textSize="8sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+                <TextView
+                    android:id="@+id/youtube_length"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="12:00"
+                    android:textSize="8sp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

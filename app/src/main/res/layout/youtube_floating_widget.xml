@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/frameco">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <com.example.musicbank.Views.RoundedWebView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/webview"
+            android:background="@color/black"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/webviewClick">
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_button_grey"
+                android:orientation="horizontal"
+                android:layout_margin="8dp"
+                android:padding="5dp">
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/closeyoutube"
+                    android:layout_marginRight="10dp"
+                    android:alpha="0.7"
+                    android:src="@drawable/mr_dialog_close_light" />
+
+                <ImageView
+                    android:id="@+id/fullscreenImg"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_toRightOf="@id/closeyoutube"
+                    android:src="@drawable/maximize_grey"
+                    android:rotation="45"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/pauselayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/round_button_grey"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/pauseSetting"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:alpha="0.6"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:id="@+id/yt_logo"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+</FrameLayout>

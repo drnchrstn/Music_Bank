@@ -52,31 +52,31 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DbHelper(MainActivity.this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this, SearchSongActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slideup, R.anim.noanimation);
-
-//                ApiRetrofitHelper.getInstance().getSong("with a smile Eraserheads", new Callback<SongResultResponse>() {
-//                    @Override
-//                    public void onResponse(Call<SongResultResponse> call, Response<SongResultResponse> response) {
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                    Intent intent = new Intent(MainActivity.this, SearchSongActivity.class);
+//                    startActivity(intent);
+//                    overridePendingTransition(R.anim.slideup, R.anim.noanimation);
 //
-//                        Log.v("","");
-//                    }
+////                ApiRetrofitHelper.getInstance().getSong("with a smile Eraserheads", new Callback<SongResultResponse>() {
+////                    @Override
+////                    public void onResponse(Call<SongResultResponse> call, Response<SongResultResponse> response) {
+////
+////                        Log.v("","");
+////                    }
+////
+////                    @Override
+////                    public void onFailure(Call<SongResultResponse> call, Throwable t) {
+////                        Log.v("","");
+////                    }
+////                });
 //
-//                    @Override
-//                    public void onFailure(Call<SongResultResponse> call, Throwable t) {
-//                        Log.v("","");
-//                    }
-//                });
-
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-            }
-        });
+////                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+////                        .setAction("Action", null).show();
+//            }
+//        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -104,12 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
     @Override
     public boolean onSupportNavigateUp() {

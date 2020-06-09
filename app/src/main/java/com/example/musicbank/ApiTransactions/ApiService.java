@@ -25,4 +25,7 @@ public interface ApiService {
     @GET("lyrics/{song_name}")
     Call<SongResultResponse> getSong(@Path("song_name") String name);
 
+    @POST("search")
+    Call<ResponseBody> getSuggestion(@Body String body);
+
 }

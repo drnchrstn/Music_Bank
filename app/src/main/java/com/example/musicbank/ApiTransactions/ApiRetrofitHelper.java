@@ -2,6 +2,8 @@ package com.example.musicbank.ApiTransactions;
 
 import android.content.Context;
 
+import androidx.collection.ArrayMap;
+
 import com.example.musicbank.App;
 import com.example.musicbank.AppConfig.Config;
 import com.example.musicbank.Objects.SongResultResponse;
@@ -31,4 +33,18 @@ public class ApiRetrofitHelper {
             mApiService.getSong(songName).enqueue(callback);
         }
     }
+
+    public void getSuggestion(ArrayMap<String, Object> arr, Callback<ResponseBody> callback){
+        ApiService mApiService = ApiUtils.getApiGoogleSuggestion(Config.googleSuggestion);
+        if (mApiService != null){
+            mApiService.getSuggestion(objectParam(arr)).enqueue(callback);
+        }
+    }
+
+    //parameter generator
+    private String objectParam(ArrayMap<String, Object> arr){
+        JSONObject paramObject = new JSONObject(arr);
+        return paramObject.toString();
+    }
+
 }

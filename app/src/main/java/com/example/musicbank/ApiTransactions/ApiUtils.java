@@ -28,4 +28,24 @@ public class ApiUtils {
         }
         return null;
     }
+
+    public static ApiService getApiGoogleSuggestion(String url){
+        try {
+            return RetrofitClient.getClientSuggestion(url).create(ApiService.class);
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        } catch (UnrecoverableKeyException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (KeyManagementException e) {
+            e.printStackTrace();
+        } catch (KeyStoreException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

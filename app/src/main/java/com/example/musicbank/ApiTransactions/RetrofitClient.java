@@ -28,6 +28,9 @@ public class RetrofitClient {
     //songLyrics
     private static Retrofit retrofitSong = null;
 
+    //google suggestion
+    private static Retrofit googleSuggestion = null;
+
 
 
     private static OkHttpClient getClient2() throws CertificateException, NoSuchAlgorithmException, IOException, KeyStoreException, UnrecoverableKeyException, KeyManagementException {
@@ -76,6 +79,18 @@ public class RetrofitClient {
                     .build();
         }
         return retrofitSong;
+    }
+
+    public static Retrofit getClientSuggestion(String baseUrl) throws CertificateException, UnrecoverableKeyException, NoSuchAlgorithmException, IOException, KeyManagementException, KeyStoreException {
+        if (googleSuggestion==null) {
+            googleSuggestion = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .client(getClient2())
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return googleSuggestion;
     }
 
 }

@@ -7,11 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.collection.ArrayMap;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,6 +26,7 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -73,6 +75,7 @@ public class SearchSongActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar_search, menu);
         MenuItem menuItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) menuItem.getActionView();
+//        SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setQueryHint("Find songs");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -112,6 +115,22 @@ public class SearchSongActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+//                ArrayMap<String, Object> arr = new ArrayMap<>();
+//                arr.put("client", "firefox");
+//                arr.put("h1", "en");
+//
+//                ApiRetrofitHelper.getInstance().getSuggestion(arr, new Callback<ResponseBody>() {
+//                    @Override
+//                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//                        Log.v("","");
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+//                        Log.v("","");
+//                    }
+//                });
+
                 return false;
             }
         });

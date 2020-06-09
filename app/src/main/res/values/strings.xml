@@ -18,4 +18,6 @@
     <string name="menu_artists">Artists</string>
     <string name="menu_playlist">Playlist</string>
 
+    <string name="live_text" translatable="true">LIVE</string>
+
 </resources>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <WebView
+        android:id="@+id/webViewYT"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/clickcon">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonlayout"
+            android:alpha=".9"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/playbutton"
+                android:src="@drawable/play_youtube_true" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/pausebutton"
+                android:src="@drawable/pause_youtube_true"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/seekcon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:id="@+id/timeLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/timeRemaining"
+                android:layout_toRightOf="@id/timeLeft"
+                android:id="@+id/seekBar"
+                android:progressTint="@color/colorPrimary"
+                android:progressBackgroundTint="@color/white"
+                android:thumbTint="@color/colorPrimary" />
+            <TextView
+                android:id="@+id/timeRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:layout_alignParentRight="true"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_border_grey_dark"
+            android:orientation="horizontal"
+            android:id="@+id/topToolbar"
+            android:layout_margin="10dp"
+            android:alpha="0.8"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imgBack"
+                android:layout_marginRight="20dp"
+                android:padding="7dp"
+                android:alpha="0.7"
+                android:src="@drawable/closew" />
+
+            <ImageView
+                android:id="@+id/imgsmall"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/imgBack"
+                android:src="@drawable/minimize_white"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:id="@+id/yt_logo"
+        android:layout_marginTop="-50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/webViewYT"/>
+</RelativeLayout>
