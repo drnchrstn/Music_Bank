@@ -41,6 +41,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ActivityYoutubeMax"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <activity android:name=".SearchSongActivity">
 

@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -33,6 +34,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+import com.example.musicbank.ActivityYoutubeMax;
 import com.example.musicbank.R;
 import com.example.musicbank.Utils.PreferenceUtils;
 import com.example.musicbank.Views.RoundedWebView;
@@ -267,6 +269,17 @@ public class YoutubeWidgetService extends Service {
         webView.loadDataWithBaseURL("http://www.youtube.com", YoutubeiFrame.frame_youtube(id, 0), "text/html", "UTF-8", "http://www.youtube.com");
 
     }
+
+    @JavascriptInterface
+    public void notifyCurrentTime(int secs) {
+        Intent intent = new Intent(YoutubeWidgetService.this, ActivityYoutubeMax.class);
+        intent.putExtra("id", id);
+        intent.putExtra("second", secs);
+        intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        mFloatingWidget.setVisibility(View.GONE);
+    }
+
 
     public void getCurrentTime() {
         webView.loadUrl("javascript:getCurrentTime()");
