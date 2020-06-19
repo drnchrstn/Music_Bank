@@ -51,13 +51,7 @@
         <activity android:name=".SearchSongActivity">
 
         </activity>
-
-        <activity
-            android:name=".ActivityYoutubeMax"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SongLyricsActivity"/>
+        <activity android:name=".SongLyricsActivity"></activity>
     </application>
 
 </manifest>

@@ -132,7 +132,12 @@ public class SongLyricsActivity extends AppCompatActivity {
             public void onErrorResponse(Exception exception) {
 
             }
-        }, SongLyricsActivity.this, songName, "").execute();
+        }, SongLyricsActivity.this, songName + " " + songArtist, "").execute();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiver);
+    }
 }

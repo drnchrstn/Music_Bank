@@ -1,6 +1,7 @@
 package com.example.musicbank.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +11,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.musicbank.Objects.Song;
 import com.example.musicbank.R;
+import com.example.musicbank.SongLyricsActivity;
 import com.example.musicbank.Utils.StringUtils;
 
 import java.text.DateFormat;
@@ -42,6 +45,16 @@ public class SongListCursorAdapter extends BaseCursorAdapter<SongListCursorAdapt
         holder.tv_artist.setText(song.getArtist());
         holder.tv_date_added.setText(StringUtils.timestampToDate(song.getDate_added()));
 
+        holder.songContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, SongLyricsActivity.class);
+                i.putExtra("song_name", song.getName());
+                i.putExtra("song_artist", song.getArtist());
+                i.putExtra("song_lyrics", song.getLyics());
+                context.startActivity(i);
+            }
+        });
 
     }
 
@@ -58,6 +71,7 @@ public class SongListCursorAdapter extends BaseCursorAdapter<SongListCursorAdapt
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_song_name, tv_artist, tv_date_added;
+        ConstraintLayout songContainer;
 
 
         public ViewHolder(@NonNull View v) {
@@ -66,6 +80,7 @@ public class SongListCursorAdapter extends BaseCursorAdapter<SongListCursorAdapt
             tv_song_name = v.findViewById(R.id.tv_song_name);
             tv_artist = v.findViewById(R.id.tv_artist);
             tv_date_added = v.findViewById(R.id.tv_date_added);
+            songContainer = v.findViewById(R.id.songContainer);
 
         }
     }
